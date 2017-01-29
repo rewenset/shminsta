@@ -10,6 +10,10 @@ urlpatterns = [
         views.dashboard,
         name='dashboard'),
 
+    url(r'^register/$',
+        views.register,
+        name='register'),
+
     url(r'login/$',
         'django.contrib.auth.views.login',
         name='login'),
