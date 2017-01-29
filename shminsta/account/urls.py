@@ -14,6 +14,10 @@ urlpatterns = [
         views.register,
         name='register'),
 
+    url(r'^edit/$',
+        views.edit,
+        name='edit'),
+
     url(r'login/$',
         'django.contrib.auth.views.login',
         name='login'),

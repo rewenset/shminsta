@@ -106,3 +106,6 @@ LOGOUT_URL = reverse_lazy('logout')
 
 # Print emails to console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
