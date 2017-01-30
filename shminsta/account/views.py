@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.core.exceptions import ObjectDoesNotExist
 
 from .models import Profile
 from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
@@ -70,7 +71,11 @@ def edit(request):
             messages.error(request, 'Error updating your profile')
     else:
         user_form = UserEditForm(instance=request.user)
-        profile_form = ProfileEditForm(instance=request.user.profile)
+        try:
+            profile_form = ProfileEditForm(instance=request.user.profile)
+        except ObjectDoesNotExist:
+            Profile.objects.create(user=request.user)
+            profile_form = ProfileEditForm(instance=request.user.profile)
 
     return render(request,
                   'account/edit.html',

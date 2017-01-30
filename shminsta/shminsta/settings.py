@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'account',
     'django.contrib.admin',
+    'social.apps.django_app.default'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -112,6 +113,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Django will stop at the first backend that successfully authenticates the user.
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',    # default
-    'account.authentication.EmailAuthBackend',      # custom
+    'django.contrib.auth.backends.ModelBackend',  # default
+    'account.authentication.EmailAuthBackend',  # custom
+    'social.backends.facebook.Facebook2OAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'social.backends.google.GoogleOAuth2',
 )
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1807........7223'  # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ab20........e0'  # Facebook App Secret
+# SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_TWITTER_KEY = 'ztGj........6fTm'  # Twitter Consumer Key
+SOCIAL_AUTH_TWITTER_SECRET = 'euJgc........7iKwWp'  # Twitter Consumer Secret
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '211380........k' \
+                                '.apps.googleusercontent.com' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'V........9' # Google Consumer Secret
