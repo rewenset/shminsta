@@ -109,3 +109,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# Django will stop at the first backend that successfully authenticates the user.
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',    # default
+    'account.authentication.EmailAuthBackend',      # custom
+)
