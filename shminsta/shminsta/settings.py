@@ -32,7 +32,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
+    'django.contrib.messages',  # allows to display one-time notification.
     'django.contrib.staticfiles',
     'account',
     'django.contrib.admin',
