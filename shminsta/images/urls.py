@@ -13,4 +13,8 @@ urlpatterns = [
     url(r'^like/$',
         views.image_like,
         name='like'),
+
+    url(r'^$',
+        views.image_list,
+        name='list'),
 ]
