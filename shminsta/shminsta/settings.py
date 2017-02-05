@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'django.contrib.auth',
-    'django.contrib.contenttypes',
+    'django.contrib.contenttypes',  # provides a generic interface to interact with models
     'django.contrib.sessions',
     'django.contrib.messages',  # allows to display one-time notification.
     'django.contrib.staticfiles',
@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'social.apps.django_app.default',
     'images',
     'sorl.thumbnail',
+    'actions',
 )
 
 MIDDLEWARE_CLASSES = (
