@@ -6,6 +6,7 @@ Pillow==4.0.0
 PyJWT==1.4.2
 python-social-auth==0.2.12
 python3-openid==3.0.10
+redis==2.10.5
 requests==2.13.0
 requests-oauthlib==0.7.0
 six==1.10.0
