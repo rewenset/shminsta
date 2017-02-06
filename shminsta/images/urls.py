@@ -17,4 +17,8 @@ urlpatterns = [
     url(r'^$',
         views.image_list,
         name='list'),
+
+    url(r'^ranking/$',
+        views.image_ranking,
+        name='ranking'),
 ]
