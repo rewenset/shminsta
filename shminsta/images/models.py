@@ -19,13 +19,15 @@ class Image(models.Model):
     description = models.TextField(blank=True)
     created = models.DateField(auto_now_add=True, db_index=True)
 
+    total_likes = models.PositiveIntegerField(db_index=True, default=0)
+
     def __str__(self):
         return self.title
 
     def save(self, *args, **kwargs):
         if not self.slug:  # when no slug is provided
             self.slug = slugify(self.title)  # generate the image slug for the given title
-            super(Image, self).save(*args, **kwargs)
+        super(Image, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse('images:detail', args=[self.id, self.slug])
